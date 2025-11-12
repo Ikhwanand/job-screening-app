@@ -267,7 +267,7 @@ class JobsController(ControllerBase):
             created_at=job.created_at,
         )
 
-    @route.post("/", response=JobDetailSchema, permissions=[IsAuthenticated])
+    @route.post("/", response=JobDetailSchema, permissions=[IsAuthenticated], auth=AsyncJWTAuth())
     async def create_job(self, request, payload: JobCreateRequest):
         if not request.user.is_staff:
             raise HttpError(403, "Only admin users can create jobs.")

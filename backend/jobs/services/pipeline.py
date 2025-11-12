@@ -1,7 +1,8 @@
 from typing import Dict, Optional
 from pydantic import BaseModel, Field
 from agno.agent import Agent
-from agno.models.nvidia import Nvidia
+# from agno.models.nvidia import Nvidia # uncomment when using Nvidia model
+from agno.models.google import Gemini
 from agno.knowledge.knowledge import Knowledge
 
 from .retrieval import get_vector_db
@@ -42,7 +43,7 @@ async def run_evaluation_pipeline(
     knowledge = Knowledge(vector_db=vector_db, max_results=5)
 
     cv_agent = Agent(
-        model=Nvidia(id=MODEL_ID, api_key=MODEL_API_KEY),
+        model=Gemini(id=MODEL_ID, api_key=MODEL_API_KEY),
         knowledge=knowledge,
         output_schema=CVScore,
         instructions=[
@@ -53,7 +54,7 @@ async def run_evaluation_pipeline(
     )
 
     project_agent = Agent(
-        model=Nvidia(id=MODEL_ID, api_key=MODEL_API_KEY),
+        model=Gemini(id=MODEL_ID, api_key=MODEL_API_KEY),
         knowledge=knowledge,
         output_schema=ProjectScore,
         instructions=[
@@ -63,7 +64,7 @@ async def run_evaluation_pipeline(
     )
 
     summary_agent = Agent(
-        model=Nvidia(id=MODEL_ID, api_key=MODEL_API_KEY),
+        model=Gemini(id=MODEL_ID, api_key=MODEL_API_KEY),
         output_schema=FinalEvaluation,
     )
 
