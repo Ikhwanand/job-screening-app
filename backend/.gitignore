@@ -1,0 +1,45 @@
+# OS / IDE artifacts
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*.bak
+.idea/
+.vscode/
+
+# Python / Django
+__pycache__/
+*.py[cod]
+*.pyc
+*.pyo
+*.pyd
+*.log
+*.sqlite3
+.env
+.env.*
+
+# Virtual environments
+venv/
+env/
+.venv/
+.env/
+
+# Packaging / build
+build/
+dist/
+*.egg-info/
+
+# Django specific
+media/
+staticfiles/
+
+# Celery / cache
+celerybeat-schedule
+celerybeat.pid
+.mypy_cache/
+.pytest_cache/
+
+# IDE lint caches
+.ruff_cache/
+.mypy_cache/
+
