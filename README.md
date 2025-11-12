@@ -127,7 +127,7 @@ frontend/
 - The AI pipeline relies on external LLM and embedding services; ensure API keys are valid and rate limits are handled (retries via Tenacity).
 - `MEDIA_ROOT` stores candidate uploads; clean up files if you delete documents.
 
-You can get the api key LLM from this website [https://build.nvidia.com/qwen/qwen3-next-80b-a3b-thinking](Nvidia Qwen3 Next 80B A3B Thinking)
+You can get the api key LLM from this website [Nvidia Qwen3 Next 80B A3B Thinking](https://build.nvidia.com/qwen/qwen3-next-80b-a3b-thinking)
 
 ---
 
